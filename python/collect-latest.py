@@ -1,9 +1,10 @@
 import os
 import time
 
-path = "/home/pi/messungen/logs/"
+# Erzeugen eines relativen Pfades
+logpath = os.path.join(os.path.join(os.path.dirname(__file__),os.pardir), 'logs')
 
-outfile = open(path+"latest.txt", 'w')
+outfile = open(logpath+"latest.txt", 'w')
 
 # Konzept von Jan-Philip Gehrcke (stackoverflow)
 # Findet alle csv-Dateien im logs-Verzeichnis

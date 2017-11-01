@@ -11,7 +11,7 @@ if sys.argv[1][0] == '2' and sys.argv[1][1] == '8':
 else:
 	name = sys.argv[1]
 	# Konfigurationsdatei oeffnen
-	configfile = open("/home/pi/messungen/config/sensoren",'r')
+	configfile = open(os.path.join(os.path.join(os.path.dirname(__file__),os.pardir), 'config/sensoren'),'r')
 	config = configfile.readlines()
 	configfile.close()
 	# Jede Konfigurationszeile ist ein Sensorname mit ID 
