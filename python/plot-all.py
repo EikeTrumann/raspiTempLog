@@ -1,5 +1,6 @@
 # This script plots the data from all sensors into a single file
 
+import strings
 # Die Importreihenfolge ist wichtig!
 import matplotlib
 matplotlib.use('Agg')
@@ -8,7 +9,7 @@ import matplotlib.pyplot as plt
 # Benennung der Sensoren (laut config-Datei)
 names = []
 
-# Textstrings für den Plot
+# Textstrings fuer den Plot
 stringressources = {}
 
 # Konfigurationsdatei oeffnen
@@ -61,9 +62,9 @@ for name in names:
 box = plot.get_position()
 plot.set_position([box.x0, box.y0 + box.height * 0.1, box.width, box.height * 0.9])
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), ncol=6)
-plt.xlabel('Zeit ab Start [s]')
-plt.ylabel('Temperatur [mC]')
-plt.title("Temperatur bei Eike")
+plt.xlabel(xlabel)
+plt.ylabel(ylabel)
+plt.title(title)
 plt.grid(True)
 plt.savefig("/home/pi/messungen/plot/"+"all"+".png", format="png")
 plt.savefig("/home/pi/messungen/plot/"+"all"+".pdf", format="pdf")
